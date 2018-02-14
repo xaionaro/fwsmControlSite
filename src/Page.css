@@ -1,28 +1,17 @@
-.Page {
-  text-align: center;
-}
 
 .Page-logo {
-  animation: Page-logo-spin infinite 20s linear;
-  height: 80px;
+	position: fixed;
+	right: 90px;
+	bottom: 20px;
+	animation: Page-logo-spin infinite 30s linear;
+	opacity: 0.2;
 }
 
-.Page-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.Page-title {
-  font-size: 1.5em;
-}
-
-.Page-intro {
-  font-size: large;
+.navbar {
 }
 
 @keyframes Page-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
 }
+
