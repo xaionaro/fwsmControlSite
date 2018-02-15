@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./VLANs.css";
 
 export default class VLANsView extends Component {
+
 	render() {
 		return (
 			<div className="VLANs">

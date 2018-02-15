@@ -13,5 +13,5 @@ export default () =>
 		<Route path="/vlans" exact component={userIsAuthenticatedRedir(VLANs)} />
 		<Route path="/dhcps" exact component={userIsAuthenticatedRedir(DHCPs)} />
 		<Route path="/login" exact component={userIsNotAuthenticatedRedir(Login)} />
-		<Route component={NotFound} />
+		<Route component={NotFound} status={404} />
 	</Switch>;
