@@ -7,9 +7,9 @@ import Routes from "./Routes";
 import { connect } from 'react-redux'
 import { logout } from './actions/user'
 
-import { userIsAuthenticated, userIsNotAuthenticated } from './auth'
+import { userIsAuthenticated } from './auth'
 
-const getUserName = user => {
+/*const getUserName = user => {
 	if (user.data) {
 		return `${user.data.user.Username}`;
 	}
@@ -18,7 +18,7 @@ const getUserName = user => {
 
 // Only show login when the user is not logged in and logout when logged in
 // Could have also done this with a single wrapper and `FailureComponent`
-/*const UserName = ({ user }) => (<div className="username">{getUserName(user)}</div>)
+const UserName = ({ user }) => (<div className="username">{getUserName(user)}</div>)
 const LoginLink = userIsNotAuthenticated(() => <NavLink activeClassName="active" to="/login">Login</NavLink>)
 const LogoutLink = userIsAuthenticated(({ logout }) => <button onClick={() => logout()}>Logout</button>)*/
 

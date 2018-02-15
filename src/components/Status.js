@@ -24,7 +24,6 @@ class Status extends Component {
 	}
 
 	render() {
-		console.log(this);
 		return (
 			<div>
 				<h2>Interfaces</h2>

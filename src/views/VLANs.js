@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./VLANs.css";
+import VLANs from "../components/VLANs";
 
 export default class VLANsView extends Component {
 
@@ -8,6 +9,7 @@ export default class VLANsView extends Component {
 			<div className="VLANs">
 				<div className="contentTitle">
 					<h1>VLANs</h1>
+					<VLANs />
 				</div>
 			</div>
 		);
