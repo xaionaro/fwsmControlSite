@@ -5,9 +5,8 @@ export default class DashboardView extends Component {
 	render() {
 		return (
 			<div className="Dashboard">
-				<div className="lander">
+				<div className="contentTitle">
 					<h1>Dashboard</h1>
-					<p>some summary info…</p>
 				</div>
 			</div>
 		);

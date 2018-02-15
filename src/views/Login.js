@@ -34,6 +34,10 @@ export class LoginView extends Component {
     this.props.loginUser(this.state.login, this.state.password, this.state.redirectTo);
   }
 
+  isDisabled() {
+    return !this.validateForm()
+  }
+
   render() {
     return (
       <div className="Login">
@@ -58,7 +62,7 @@ export class LoginView extends Component {
           <Button
             block
             bsSize="large"
-            disabled={!this.validateForm()}
+            disabled={this.isDisabled()}
             onClick={this.handleSubmit}
             type="submit"
           >

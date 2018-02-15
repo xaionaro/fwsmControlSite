@@ -4,10 +4,13 @@ import constants from '../constants';
 import jwtDecode from 'jwt-decode';
 
 export function loginUserSuccess(token) {
+  let decoded = jwtDecode(token);
+  console.log("loginUserSuccess", decoded);
   localStorage.setItem('token', token);
   return {
     type: constants.LOGIN_USER_SUCCESS,
     payload: {
+      user:  decoded.user,
       token: token
     }
   }
@@ -44,7 +47,7 @@ export function logoutAndRedirect() {
     }
 }
 
-export function loginUser(email, password, redirect="/") {
+export function loginUser(login, password, redirect="/") {
     return function(dispatch) {
         dispatch(loginUserRequest());
         return fetch('/authJWT', {
@@ -54,14 +57,12 @@ export function loginUser(email, password, redirect="/") {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-                body: JSON.stringify({email: email, password: password})
+                body: JSON.stringify({login: login, password: password})
             })
             .then(checkHttpStatus)
             .then(parseJSON)
             .then(response => {
                 try {
-                    let decoded = jwtDecode(response.result.token);
-                    console.log('decoded', decoded);
                     dispatch(loginUserSuccess(response.result.token));
                     //dispatch(pushState(null, redirect));
                 } catch (e) {
@@ -78,7 +79,7 @@ export function loginUser(email, password, redirect="/") {
             })
     }
 }
-
+/*
 export function receiveProtectedData(data) {
     return {
         type: constants.RECEIVE_PROTECTED_DATA,
@@ -98,7 +99,7 @@ export function fetchProtectedData(token) {
 
     return (dispatch, state) => {
         dispatch(fetchProtectedDataRequest());
-        return fetch('http://localhost:3000/getData/', {
+        return fetch('/getData/', {
                 credentials: 'include',
                 headers: {
                     'Authorization': `Bearer ${token}`
@@ -117,3 +118,4 @@ export function fetchProtectedData(token) {
             })
        }
 }
+*/

@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import "./DHCPs.css";
+import "./Loading.css";
 
-export default class DHCPsView extends Component {
+export default class LoadingView extends Component {
 	render() {
 		return (
-			<div className="DHCPs">
+			<div className="Loading">
 				<div className="contentTitle">
-					<h1>DHCPs</h1>
+					<h1>Loading</h1>
 				</div>
 			</div>
 		);
