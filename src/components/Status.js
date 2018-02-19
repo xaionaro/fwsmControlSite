@@ -28,7 +28,7 @@ class Status extends Component {
 			<div>
 				<h2>Interfaces</h2>
 				<p>{this.state.statusText}</p>
-				<BootstrapTable data={this.state.bwmStatistics} exportCSV options={{noDataText:"collecting statistics… (wait for 5 seconds)"}}>
+				<BootstrapTable data={this.state.bwmStatistics} exportCSV search={true} hover={true} options={{noDataText:"collecting statistics… (wait for 5 seconds)"}}>
 					 <TableHeaderColumn dataField="Iface" isKey={true} dataAlign="left" dataSort={true}>iface</TableHeaderColumn>
 
 					 <TableHeaderColumn dataField="BytesOutPS"      dataAlign="center" dataSort={true}>bytes_out/s</TableHeaderColumn>

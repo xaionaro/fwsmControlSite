@@ -22,3 +22,4 @@ export function b64MaskToPrefixSize(b64Mask) {
 	var maskBinStr = maskInt.toString(2);
 	return maskBinStr.indexOf('0');
 }
+
