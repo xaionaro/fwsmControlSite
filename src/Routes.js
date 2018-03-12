@@ -4,14 +4,14 @@ import Dashboard from "./views/Dashboard";
 import NotFound from "./views/NotFound";
 import Login from "./views/Login";
 import VLANs from "./views/VLANs";
-import DHCPs from "./views/DHCPs";
+import DNATs from "./views/DNATs";
 import { userIsAuthenticatedRedir, userIsNotAuthenticatedRedir } from './auth'
 
 export default () =>
 	<Switch>
 		<Route path="/" exact component={userIsAuthenticatedRedir(Dashboard)} />
 		<Route path="/vlans" exact component={userIsAuthenticatedRedir(VLANs)} />
-		<Route path="/dhcps" exact component={userIsAuthenticatedRedir(DHCPs)} />
+		<Route path="/dnats" exact component={userIsAuthenticatedRedir(DNATs)} />
 		<Route path="/login" exact component={userIsNotAuthenticatedRedir(Login)} />
 		<Route component={NotFound} status={404} />
 	</Switch>;

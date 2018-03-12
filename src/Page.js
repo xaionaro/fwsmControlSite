@@ -24,7 +24,8 @@ const LogoutLink = userIsAuthenticated(({ logout }) => <button onClick={() => lo
 
 const DashboardLink = userIsAuthenticated(() => <NavLink exact to="/">Dashboard</NavLink>)
 const VLANsLink = userIsAuthenticated(() => <NavLink exact to="/vlans">VLANs</NavLink>)
-const DHCPsLink = userIsAuthenticated(() => <NavLink exact to="/dhcps">DHCPs</NavLink>)
+//const DHCPsLink = userIsAuthenticated(() => <NavLink exact to="/dhcps">DHCPs</NavLink>)
+const DNATsLink = userIsAuthenticated(() => <NavLink exact to="/dnats">DNATs</NavLink>)
 
 function Page({ user, logout }) {
 	return (
@@ -36,7 +37,7 @@ function Page({ user, logout }) {
 							<Navbar.Brand>
 								<DashboardLink />
 								<VLANsLink />
-								<DHCPsLink />
+								<DNATsLink />
 							</Navbar.Brand>
 						</Navbar.Collapse>
 						<Navbar.Toggle />

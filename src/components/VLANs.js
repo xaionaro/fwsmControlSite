@@ -67,9 +67,8 @@ class VLANs extends BaseComponent {
 		return (
 			<div>
 				<p>{this.state.statusText}</p>
-				<BootstrapTable data={this.state.vlans} exportCSV search={true} hover={true} selectRow={{mode: 'checkbox'}} insertRow={true} deleteRow={true} options={{noDataText:"fetching vlans…", afterInsertRow: this.onAfterInsertRow.bind(this), onDeleteRow: this.onDeleteRow.bind(this), handleConfirmDeleteRow: this.customConfirm.bind(this)}}>
+				<BootstrapTable data={this.state.vlans} exportCSV search={true} hover={true} options={{noDataText:"fetching vlans…", afterInsertRow: this.onAfterInsertRow.bind(this), onDeleteRow: this.onDeleteRow.bind(this), handleConfirmDeleteRow: this.customConfirm.bind(this)}}>
 					 <TableHeaderColumn dataField="VlanId" isKey={true} dataAlign="left" dataSort={true} headerText="VLAN id">id</TableHeaderColumn>
-
 					 <TableHeaderColumn dataField="Name"             dataAlign="center" dataSort={true} headerText="Name">name</TableHeaderColumn>
 					 <TableHeaderColumn dataField="SecurityLevel"    dataAlign="center" dataSort={true} headerText="Security level">security_level</TableHeaderColumn>
 					 <TableHeaderColumn dataField="IPs"              dataAlign="left"   dataSort={true} headerText="IPs" dataFormat={this.netsFormat}>ip</TableHeaderColumn>
@@ -78,5 +77,6 @@ class VLANs extends BaseComponent {
 		)
 	}
 }
+				//<BootstrapTable data={this.state.vlans} exportCSV search={true} hover={true} selectRow={{mode: 'checkbox'}} insertRow={true} deleteRow={true} options={{noDataText:"fetching vlans…", afterInsertRow: this.onAfterInsertRow.bind(this), onDeleteRow: this.onDeleteRow.bind(this), handleConfirmDeleteRow: this.customConfirm.bind(this)}}>
 
 export default connect(state => (state))(VLANs)

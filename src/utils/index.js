@@ -23,3 +23,26 @@ export function b64MaskToPrefixSize(b64Mask) {
 	return maskBinStr.indexOf('0');
 }
 
+
+export function ipportFormat(ipport) {
+	var ipportStr = ipport.IP;
+	if (ipport.Port != null) {
+		ipportStr += ":"+ipport.Port;
+	}
+	if (ipport.Protocol != null) {
+		ipportStr += "/"+ipport.Protocol;
+	}
+	return ipportStr;
+}
+
+export function ipportsFormat(ipports) {
+	if (ipports == null) {
+		return "";
+	}
+	var ipportsStr = [];
+	for (var i=0; i<ipports.length; i++) {
+		console.log(this);
+		ipportsStr.push(ipportFormat(ipports[i]));
+	};
+	return ipportsStr.join(", ");
+}
