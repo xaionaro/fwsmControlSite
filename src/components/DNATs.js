@@ -2,7 +2,7 @@ import React from "react";
 import { BaseComponent } from "./BaseComponent";
 import { connect } from 'react-redux';
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
-import { b64MaskToPrefixSize, ipportFormat, ipportsFormat } from '../utils';
+import { ipportFormat, ipportsFormat } from '../utils';
 
 class DNATs extends BaseComponent {
 	constructor(props) {

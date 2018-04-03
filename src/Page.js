@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar } from "react-bootstrap";
+import { Navbar, ButtonToolbar, Button } from "react-bootstrap";
 import logo from './favicon.ico';
 import './Page.css';
 import { BrowserRouter as Router, NavLink } from 'react-router-dom'
@@ -26,6 +26,11 @@ const DashboardLink = userIsAuthenticated(() => <NavLink exact to="/">Dashboard<
 const VLANsLink = userIsAuthenticated(() => <NavLink exact to="/vlans">VLANs</NavLink>)
 //const DHCPsLink = userIsAuthenticated(() => <NavLink exact to="/dhcps">DHCPs</NavLink>)
 const DNATsLink = userIsAuthenticated(() => <NavLink exact to="/dnats">DNATs</NavLink>)
+//const RescanLink = userIsAuthenticated(() => <NavLink exact to="/rescan">Rescan</NavLink>)
+//const ApplyLink = userIsAuthenticated(() => <NavLink exact to="/apply">Apply</NavLink>)
+//const SaveLink = userIsAuthenticated(() => <NavLink exact to="/save">Save</NavLink>)
+//const RestoreLink = userIsAuthenticated(() => <NavLink exact to="/restore">Restore</NavLink>)
+//const RestoreButton = userIsAuthenticated(() => <Button bsStyle="danger" onClick={}>Restore</Button>)
 
 function Page({ user, logout }) {
 	return (
@@ -44,6 +49,8 @@ function Page({ user, logout }) {
 					</Navbar.Header>
 				</Navbar>
 				<Routes />
+				<ButtonToolbar>
+				</ButtonToolbar>
 				<img src={logo} className="Page-logo" alt="logo" />
 			</div>
 		</Router>
